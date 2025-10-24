@@ -1,24 +1,27 @@
 public class TestMain {
     public static void main(String[] args) {
-        Author ahTeck = new Author("Tan Ah Teck", "ahteck@nowhere.com", 'm');
-        System.out.println(ahTeck);  // Author's toString()
+        // Test Customer class
+        Customer c1 = new Customer(88, "Tan Ah Teck", 10);
+        System.out.println(c1);  // Customer's toString()
 
-        Book dummyBook = new Book("Java for dummy", ahTeck, 19.95, 99);  // Test Book's Constructor
-        System.out.println(dummyBook);  // Test Book's toString()
+        c1.setDiscount(8);
+        System.out.println(c1);
+        System.out.println("id is: " + c1.getId());
+        System.out.println("name is: " + c1.getName());
+        System.out.println("discount is: " + c1.getDiscount());
 
-// Test Getters and Setters
-        dummyBook.setPrice(29.95);
-        dummyBook.setQty(28);
-        System.out.println("name is: " + dummyBook.getName());
-        System.out.println("price is: " + dummyBook.getPrice());
-        System.out.println("qty is: " + dummyBook.getQty());
-        System.out.println("Author is: " + dummyBook.getAuthor());  // Author's toString()
-        System.out.println("Author's name is: " + dummyBook.getAuthor().getName());
-        System.out.println("Author's email is: " + dummyBook.getAuthor().getEmail());
+        // Test Invoice class
+        Invoice inv1 = new Invoice(101, c1, 888.8);
+        System.out.println(inv1);
 
-// Use an anonymous instance of Author to construct a Book instance
-        Book anotherBook = new Book("more Java",
-                new Author("Paul Tan", "paul@somewhere.com", 'm'), 29.95);
-        System.out.println(anotherBook);  // toString()
+        inv1.setAmount(999.9);
+        System.out.println(inv1);
+        System.out.println("id is: " + inv1.getId());
+        System.out.println("customer is: " + inv1.getCustomer());  // Customer's toString()
+        System.out.println("amount is: " + inv1.getAmount());
+        System.out.println("customer's id is: " + inv1.getCustomerId());
+        System.out.println("customer's name is: " + inv1.getCustomerName());
+        System.out.println("customer's discount is: " + inv1.getCustomerDiscount());
+        System.out.printf("amount after discount is: %.2f%n", inv1.getAmountAfterDiscount());
     }
 }

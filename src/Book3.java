@@ -1,4 +1,4 @@
-public class Book {
+public class Book3 {
 
     private String isbn;
     private String name;
@@ -6,14 +6,14 @@ public class Book {
     private double price;
     private int qty = 0;
 
-    public Book(String name, String isbn, Author author, double price) {
+    public Book3(String name, String isbn, Author author, double price) {
         this.name = name;
         this.isbn = isbn;
         this.author = author;
         this.price = price;
     }
 
-    public Book(String isbn, String name, Author author, double price, int qty) {
+    public Book3(String isbn, String name, Author author, double price, int qty) {
         this.isbn = isbn;
         this.name = name;
         this.author = author;
